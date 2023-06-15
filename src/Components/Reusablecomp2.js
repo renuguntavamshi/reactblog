@@ -29,7 +29,7 @@ function Reusablecomp2(){
           )
         }
 )} */}
-<div className='Navbar'>
+<div className='Links'>
   
  <Link to="home"  className='link'> Home  </Link>
  <Link to="bollywood" className='link'> Bollywood  </Link>

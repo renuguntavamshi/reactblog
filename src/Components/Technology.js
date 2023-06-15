@@ -1,10 +1,12 @@
 import {useState,useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 function Technology(props){
 let [arr,setarr]=useState([]);
 let [count,setcount]=useState(7);
 console.log(props.data);
-; 
+let item=props.data.technology; 
+
 useEffect(()=>{
   setarr([...arr,props.data.technology])
 },[])
@@ -18,20 +20,20 @@ return(
 </h1>
 <hr className='hrstyleofheading'/><br />
     {
-props.data.technology.map((item,index)=>{
+item.map((item,index)=>{
     console.log(count)
-    if(index<count){
+    if(index>0 && index<count){
         return(
-                      <div  className='Navbar' id='leftcontainer'>
+                      <div  className='Navbar'  id='leftcontainer'>
           
-                 <div><img src={item.urlToImage} style={{width:"300px",height:"200px"}} /></div>
-                  <div >
-                  <h4 className='styleofheaindandcontent' >{item.title}</h4>
-                  <p className='styleofheaindandcontent'>{item.content}</p>
+                <div className='mappeditems'><img src={item.urlToImage} style={{width:"300px",height:"200px"}} alt={"Image not available"} /></div>
+                  <div  >
+                  <h4 className='styleofheaindandcontent' ><Link to={`/individualdatapage/${index}`} state={item}>{item.title}</Link></h4>
+                  <p className='styleofheaindandcontent' style={{maxHeight:"40%",overflow:"hidden"}}>{item.description}</p>
                   <p className='publisheddatestyle'>Technology/{item.publishedAt}</p>
-                  
+                 
                   </div>
-                        </div>
+               </div>
                
              
                
@@ -40,6 +42,8 @@ props.data.technology.map((item,index)=>{
   
   })
 }
+{(count<15)?<button onClick={()=>setcount(count+7)}>Click me</button>
+:""}
     </div>
     {/* //left container data */}
     <div >
@@ -48,19 +52,20 @@ props.data.technology.map((item,index)=>{
     </h1>
     <hr className='hrstyleofheading'/><br />
     {
-props.data.technology.map((item,index)=>{
+item.map((item,index)=>{
     console.log(count)
-    if(index>4 && index<8){
+    if(index>6 && index<11){
         return(
                       <div  className='Navbar'  id='leftcontainer'>
           
-                 <div><img src={item.urlToImage} style={{width:"300px",height:"200px"}} /></div>
-                  <div >
-                  <h4 className='styleofheaindandcontent' >{item.title}</h4>
-                  <p className='styleofheaindandcontent'>{item.content}</p>
+                <div className='mappeditems'><img src={item.urlToImage} style={{width:"300px",height:"200px"}} alt={"Image not available"} /></div>
+                  <div  >
+                  <h4 className='styleofheaindandcontent' ><Link to={`/individualdatapage/${index}`} state={item}>{item.title}</Link></h4>
+                  <p className='styleofheaindandcontent' style={{maxHeight:"40%",overflow:"hidden"}}>{item.description}</p>
                   <p className='publisheddatestyle'>Technology/{item.publishedAt}</p>
+                 
                   </div>
-                        </div>
+               </div>
                
              
                

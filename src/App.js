@@ -6,8 +6,9 @@ import Hollywood from './Components/Hollywood';
 import Food from './Components/Food';
 import Technology from './Components/Technology';
 import Fitness from './Components/Fitness';
+import Individualdatapage from './Components/Individualdatapage';
 import Reusablecomp2 from './Components/Reusablecomp2';
-
+import Practice from './Components/Practice';
 import {Routes,Route} from 'react-router-dom'
 import Datafromjson from './Data.json'
 import { createContext } from 'react';
@@ -20,11 +21,12 @@ console.log(data);
   return (
     <div className="App">
 
-      <div style={{textAlign:"center"}}>
-      <div style={{color:"blue"}}> 
-    <h2>The Siren</h2>
+      <div className='Thesiren'>
+      <div > 
+    <h2 className='sirenlogo'><span style={{backgroundColor:"red"}}> The</span><span style={{backgroundColor:"black"}}>Siren</span> <span className='tabs'>_</span> </h2>
   </div>
         <Reusablecomp2 />
+      
         </div>        {/* //DIsplaycontainer */}
         
 
@@ -44,6 +46,7 @@ console.log(data);
         <Route  path ='technology' element={<Technology data ={Datafromjson} />}/>
         <Route  path ='food' element={<Food data ={Datafromjson} />}/>
         <Route  path ='fitness' element={<Fitness data ={Datafromjson} />}/>
+        <Route  path ='/individualdatapage/:index' element={<Individualdatapage  />}/>
        
         <Route  path =":Category" element={<Reusablecomp2  state ={Datafromjson}/>}/>
       </Routes>

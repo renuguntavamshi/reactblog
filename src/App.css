@@ -1,4 +1,4 @@
-.Navbar{
+.Links{
   display: flex;
   justify-content: space-evenly;
 }
@@ -17,13 +17,16 @@
  
   margin-top:0px
 }
+.styleofheaindandcontent{
+  max-height:40%;overflow:hidden
+}
 .container{
 display: flex;
 justify-content: space-between;
 margin:20px;
 }
 .styleofheaindandcontent{
-  margin:7px 15px 0px
+  margin:7px 8px 0px
 }
 .publisheddatestyle{
   margin: 7px 14px 0px;
@@ -33,4 +36,37 @@ margin:20px;
   text-decoration: none;
   font-size: larger;
   color:blueviolet;
+}
+.mappeditems{
+  margin-bottom: 10px;
+ 
+}
+#headingofindividualpage{
+  display:flex;
+    flex-direction:column;
+    align-items:center
+}
+.Thesiren{
+  text-align: center;
+  color:rgb(254, 254, 255);
+}
+.tabs{
+  visibility: hidden;
+}
+.Navbar{
+  display: flex;
+}
+.homearticles{
+  display: flex;
+ margin-bottom: 10px !important;
+ margin:40px;
+}
+@media only  screen and (max-width:1240px) {
+  body{background-color: rgba(158, 149, 89, 0.2);}
+  .Links{flex-direction: column;  }
+ .sirenlogo{text-align: left;}
+ .tabs{visibility: visible;float: right;clear: both;}
+ .container{flex-direction: column;align-items: center;}
+ .styleofheaindandcontent{ max-height:auto;overflow:visible;}
+.homearticles{  display: flex;  margin:10px;}
 }
