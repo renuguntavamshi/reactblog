@@ -61,6 +61,9 @@ margin:20px;
  margin-bottom: 10px !important;
  margin:40px;
 }
+.homefirstimages{
+  display: flex;
+}
 @media only  screen and (max-width:1240px) {
   body{background-color: rgba(158, 149, 89, 0.2);}
   .Links{flex-direction: column;  }

@@ -13,11 +13,22 @@ console.log(arr)
 return(
         <div>
           <h1>Welcome to The Siren</h1>
-          <div style={{margin:"80px"}}>
-             <img src={myContext[0].urlToImage} width={"100%"} height={"500px"}/>
-                    <img src={myContext[1].urlToImage} width={"50%"} height={"300px"}/>
-             <img src={myContext[3].urlToImage} width={"50%"} height={"300px"} />
-             </div>
+          <div style={{margin:"80px"}}className='homefirstimages'>
+          <div  style={{position:"relative"}}>         
+            <img src={myContext[0].urlToImage} width={"100%"} height={"500px"}/>
+            <h2 style={{position:"absolute",top:"50%",left:"10%",color:"white"}}>{myContext[0].title}</h2>
+          </div>
+
+            <div style={{position:"relative"}}>  
+         <div>   <img src={myContext[1].urlToImage} width={"100%"} height={"250px"}/> 
+              <h2 style={{position:"absolute",top:"15%",left:"10%",color:"white"}}>{myContext[1].title}</h2>
+              </div>  
+              <div>   <img src={myContext[4].urlToImage} width={"100%"} height={"250px"}/> 
+              <h2 style={{position:"absolute",bottom:"15%",left:"10%",color:"white"}}>{myContext[4].title}</h2>
+              </div>
+              </div>
+              
+                           </div>
       <hr height={"13px"}/>
    
 {
@@ -27,7 +38,12 @@ myContext.map((item,index)=>{
   return(<div className='homecontainer'>
   <div className='homearticles'>
   <img src={item.urlToImage} width={"355px"} height={"300px"} />
- <h3> <Link to={`/individualdatapage/${index}`} state={item}>{item.title}</Link></h3>
+ <div style={{marginLeft:"18px"}}> 
+  <h3><Link to={`/individualdatapage/${index}`} state={item}>{item.title}</Link></h3>
+  <p>{item.content}</p>
+  <p>{item.publishedAt}</p>
+ </div>
+ 
 
 
   </div>
