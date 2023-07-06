@@ -71,5 +71,39 @@ margin:20px;
  .tabs{visibility: visible;float: right;clear: both;}
  .container{flex-direction: column;align-items: center;}
  .styleofheaindandcontent{ max-height:auto;overflow:visible;}
-.homearticles{  display: flex;  margin:10px;}
+.homearticles{  display: flex;  margin:10px;overflow: hidden;}
+}
+
+.active{
+  color:rgb(35, 4, 56);
+}
+.pending{color:rgb(6, 6, 5); font-weight:bold}
+@media only screen and (max-width: 550px){
+  .Homecontainer{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .responsivenav{
+    display: flex;
+    flex-direction: column;
+  }
+  .Navbar{display: block;margin-bottom: 10px; }
+  
+.homearticles {
+    display: flex;
+    flex-direction: column;
+    /* height: 300px; */
+    overflow: hidden;
+}
+.homefirstimages{
+  display: none;
+}
+} 
+@media  screeen and (max-width:790px) {
+  .responsivenav{
+    display: flex;
+    flex-direction: column;
+  }
+  
 }

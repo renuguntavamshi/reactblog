@@ -9,27 +9,33 @@ import Fitness from './Components/Fitness';
 import Individualdatapage from './Components/Individualdatapage';
 import Reusablecomp2 from './Components/Reusablecomp2';
 import Practice from './Components/Practice';
-import {Routes,Route} from 'react-router-dom'
+import { useState } from 'react';
+import {Routes,Route,Link,NavLink} from 'react-router-dom'
 import Datafromjson from './Data.json'
 import { createContext } from 'react';
 export let dataContext=createContext();
 function App() {
+  let [tab,settab]=useState(false);
   console.log(Datafromjson)
   let data=Object.keys(Datafromjson);
 console.log(data);
 console.log(data);
+let tabfunc=()=>{
+  settab(!tab);
+}
   return (
     <div className="App">
 
       <div className='Thesiren'>
       <div > 
-    <h2 className='sirenlogo'><span style={{backgroundColor:"red"}}> The</span><span style={{backgroundColor:"black"}}>Siren</span> <span className='tabs'>_</span> </h2>
+    <h2 className='sirenlogo'><span style={{backgroundColor:"red"}}> The</span>
+    <span style={{backgroundColor:"black"}}>Siren</span>
+     <span className='tabs'><button onClick={tabfunc}>Tab</button></span> </h2>
   </div>
         <Reusablecomp2 />
       
         </div>        {/* //DIsplaycontainer */}
         
-
              <Routes>
              <Route  path ='/' element={
         <dataContext.Provider value={Datafromjson.home}>
@@ -50,7 +56,7 @@ console.log(data);
        
         <Route  path =":Category" element={<Reusablecomp2  state ={Datafromjson}/>}/>
       </Routes>
-       
+        
     </div>    // App
   );
 }

@@ -11,7 +11,7 @@ let [arr,setarr]=useState([]);
 console.log(arr)
 
 return(
-        <div>
+        <div className='Homecontainer'>
           <h1>Welcome to The Siren</h1>
           <div style={{margin:"80px"}}className='homefirstimages'>
           <div  style={{position:"relative"}}>         
@@ -35,7 +35,7 @@ return(
 myContext.map((item,index)=>{
   if(index>2)
 {
-  return(<div className='homecontainer'>
+  return(<div className='homecontainer homecard'>
   <div className='homearticles'>
   <img src={item.urlToImage} width={"355px"} height={"300px"} />
  <div style={{marginLeft:"18px"}}> 
